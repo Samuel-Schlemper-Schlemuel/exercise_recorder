@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/Style.css" rel="stylesheet"/>
+    <title>Registrador de exercícios</title>
+</head>
+<body>
+    <h1>Registrador de exercícios</h1>
+
+    <div id="creat_user">
+        <h2>Criar um novo usuário</h2>
+        <code>POST /api/users</code>
+        <form method="post" action="/api/users">
+            <input name="username" type="text" placeholder="nome usuario" /><br/>
+            <input class="input_button" type="submit" value="Salvar"/>
+        </form>
+    </div>
+
+    <div id="add_exercise">
+        <h2>Adicionar exercícios</h2>
+        <code>POST /api/users/:_id/exercises</code>
+        <form method="post" id="exercise_form">
+            <input type="text" placeholder="id" name="id" id=':id'/><br/>
+            <input type="text" placeholder="descrição*" name="description"/><br/>
+            <input type="number" placeholder="duração*(mins.)" name="duration"/><br/>
+            <input type="text" placeholder="data(yyyy-mm-dd)" name="date"/><br/>
+            <input class="input_button" type="submit" value="Salvar"/>
+        </form>
+    </div>
+
+    <div id="explicacao">
+        GET log de exercícios do usuário: <code>GET /api/users/:_id/logs?[from][&to][&limit]</code>
+        <br/>
+        [ ] = opicional
+        <br/>
+        from, to = datas (yyyy-mm-dd); limit = número
+    </div>
+
+    <script>
+        const exerciseForm = document.getElementById('exercise_form')
+
+        exerciseForm.addEventListener('submit', () => {
+            const userId = document.getElementById(':id').value
+            exerciseForm.action = `/api/users/${userId}/exercises`
+            exerciseForm.submit()
+        })
+    </script>
+</body>
+</html>

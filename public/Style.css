@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+    font: 16px Arial;
+}
+
+#creat_user, #add_exercise{
+    margin-bottom: 20px;
+    background-color: rgb(5, 212, 109);
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 10px;
+}
+
+input{
+    height: 30px;
+    width: 200px;
+    text-align: center;
+}
+
+code{
+    background-color: rgb(245, 243, 141);
+}
+
+.input_button{
+    box-shadow: 2px 2px rgb(126, 126, 126);
+    cursor: pointer;
+}
