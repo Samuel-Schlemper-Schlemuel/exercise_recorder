@@ -60,7 +60,7 @@ async function getName(_id){
 }
 
 async function getAllExercises(id){
-    let exercises = []
+   let exercises = []
 
     await exercisesModel.find({
         id: id
