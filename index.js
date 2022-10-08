@@ -5,6 +5,9 @@ const mongoose  = require('mongoose')
 const app = express()
 const PORT = process.env.PORT || 3000
 const URI = process.env.MONGO_URI
+console.log('chegou')
+console.log(process.env)
+console.log(URI)
 
 //Trabalhando com mongoose
 mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
